@@ -1,5 +1,4 @@
 require 'colorize'
-require 'pry'
 
 class Board
   attr_accessor :display, :adjustments, :coordinates
@@ -38,18 +37,3 @@ class Board
     [temp_one, temp_two]
   end
 end
-
-
-# x = Board.new()
-# puts ""
-# puts x.display
-# puts ""
-# x.mark_spot([[0,6]])
-# puts x.display
-# p x.mark_spot([7,7])
-# p x.mark_spot([0,7])
-# p x.mark_spot([0,0])
-# p x.mark_spot([0,2])
-# p x.mark_spot([0,3])
-# puts x.display
-

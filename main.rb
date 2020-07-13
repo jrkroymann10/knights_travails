@@ -1,21 +1,21 @@
-require_relative 'chess_board.rb'
-require_relative 'graph.rb'
-
-graph = Graph.new
-board = Board.new
-graph.add_vertex([0, 1])
-
-graph.build_graph([0, 1])
-# board.mark_spots([[0,1]])
-
-# puts board.display
-
-for i in 0..40
-  board.mark_spots([graph.vertices[i].square])
-  puts ''
-  puts board.display
-  # sleep 1
-end
+require_relative 'knight_tree.rb'
+require 'colorize'
 
 
-p graph.knight.moves_made
+puts "\n" + "                                 Welcome to Knight's Travails!".colorize(:cyan)
+
+puts "\n" + 'here, you can find the shortest, most simple path a knight can take from one square to another on a chess board'
+
+print "\n" + 'please choose your starting square (row, column): '
+start = gets.chomp.split(',')
+start[0] = start[0].to_i
+start[1] = start[1].to_i
+
+knight_tree = KnightTree.new(start)
+
+print 'please choose your ending square (row, column): '
+end_point = gets.chomp.split(',')
+end_point[0] = end_point[0].to_i
+end_point[1] = end_point[1].to_i
+
+knight_tree.knight_moves(end_point)
